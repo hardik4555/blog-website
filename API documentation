@@ -1,0 +1,93 @@
+ Below is a simple API documentation for the API Express.js application:
+
+## Blog Application API Documentation
+
+### Base URL
+```
+http://localhost:4000
+```
+
+### Endpoints
+
+#### 1. Get All Posts
+- **URL:** `/posts`
+- **Method:** `GET`
+- **Description:** Retrieve all posts from the database.
+- **Response:**
+  - Status Code: 200
+  - Body: Array of post objects
+
+#### 2. Get Post by ID
+- **URL:** `/posts/:id`
+- **Method:** `GET`
+- **Description:** Retrieve a specific post by its ID.
+- **Parameters:**
+  - `id` (URL parameter): The ID of the post.
+- **Response:**
+  - Status Code: 200
+  - Body: Post object
+
+#### 3. Create a New Post
+- **URL:** `/posts`
+- **Method:** `POST`
+- **Description:** Create a new post.
+- **Request Body:**
+  - `title` (string): Title of the post.
+  - `content` (string): Content of the post.
+  - `author` (string): Author of the post.
+- **Response:**
+  - Status Code: 201
+  - Body: Created post object
+
+#### 4. Update a Post
+- **URL:** `/posts/:id`
+- **Method:** `PATCH`
+- **Description:** Update an existing post by its ID.
+- **Parameters:**
+  - `id` (URL parameter): The ID of the post.
+- **Request Body:**
+  - `title` (string): (Optional) New title of the post.
+  - `content` (string): (Optional) New content of the post.
+  - `author` (string): (Optional) New author of the post.
+- **Response:**
+  - Status Code: 200
+  - Body: { "message": "Post updated successfully" }
+
+#### 5. Delete a Post
+- **URL:** `/posts/:id`
+- **Method:** `DELETE`
+- **Description:** Delete a post by its ID.
+- **Parameters:**
+  - `id` (URL parameter): The ID of the post.
+- **Response:**
+  - Status Code: 200
+  - Body: "Post was deleted"
+
+### Error Handling
+- If an error occurs during the API requests, a JSON response with an error message and a status code of 500 will be returned.
+
+### Sample Usage
+- **Get All Posts:**
+  ```
+  curl http://localhost:4000/posts
+  ```
+
+- **Get Post by ID:**
+  ```
+  curl http://localhost:4000/posts/1
+  ```
+
+- **Create a New Post:**
+  ```
+  curl -X POST -H "Content-Type: application/json" -d '{"title": "New Post", "content": "Content of the new post", "author": "John Doe"}' http://localhost:4000/posts
+  ```
+
+- **Update a Post:**
+  ```
+  curl -X PATCH -H "Content-Type: application/json" -d '{"title": "Updated Title"}' http://localhost:4000/posts/1
+  ```
+
+- **Delete a Post:**
+  ```
+  curl -X DELETE http://localhost:4000/posts/1
+  ```
