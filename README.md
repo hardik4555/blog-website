@@ -36,7 +36,7 @@ Follow these steps to set up the project on your local machine:
 1. Start the development server:
 
    Run the main server : server.js using node server.js
-   Run the database fetching server: index.js using node index.js
+   Run the database fetching server: API.js using node API.js
 
 2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the blog website.
 
